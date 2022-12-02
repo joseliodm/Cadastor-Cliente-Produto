@@ -4,47 +4,45 @@
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Css / global -->  
-    <link rel="stylesheet" href="css/style.css">  
-    <!-- Css / Bootstrap -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <title>Cadastro Cliente /Produto</title>
   </head>
   <body>
-    <div class="container">
-        <div class="col">
-            <h1>Cadastro Cliente / Produto</h1>
+    
+    <form id="form">
+      <div class="container">
+        <div class="form-row">
+          <div class="form-group col-md-8">
+            <label for="rs">Razão Social</label>
+            <input type="text" class="form-control" id="rs" placeholder="Nome da Razão Social">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="cnpj">CNPJ</label>
+            <input type="text" class="form-control" id="cnpj" placeholder="00.000.000/0000-00">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="nf">Nome Fantasia</label>
+            <input type="text" class="form-control" id="nf" placeholder="Ex. Padaria Estrela">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="ie">Inscrição Estadual</label>
+            <input type="text" class="form-control" id="ie" placeholder="000.000.000.000">
+          </div>
         </div>
-        <form>
-            <div class="col-one">
-                <div class="form-row">
-                    <div class="col">
-                        <label for="data">Data Solicitação</label>
-                        <input type="datetime-local" class="form-control" placeholder="Data"
-                        title="Selecione a Data e Hora">
-                    </div>
-                <div class="col-7">
-                    <label for="nome">Nome</label>
-                    <input type="text" class="form-control" placeholder="Nome"
-                    title="Digite seu nome">
-                </div>
-                <div class="col">
-                    <label for="area">Área</label>
-                    <input type="text" class="form-control" placeholder="Área"
-                    title="Tipo de área">
-                </div>
-                </div>
-            </div>
-          </form>
-    </div>
-    <input class="form-check-input" type="text" name="cpf" \
-    pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \
-    title="Digite um CPF no formato: xxx.xxx.xxx-xx">
-    <!-- JavaScript / global-->
-    <script src="js\global.js"></script>
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </div>
+        <p id="msgErro"></p>
+      </form>
 
-    <!-- JavaScript - Jquery / Bootstrap -->
+    <!-- JavaScript -->
+    <script src="js/formulario.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
