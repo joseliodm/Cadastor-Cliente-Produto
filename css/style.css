@@ -1,10 +1,64 @@
-.ie {
+
+.form-row{
+    padding-top: 2em;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.im {
     position: relative;
     left: 25.2%;
 }
 
+
+
+.btn{
+    position: relative;
+    top: 2.5em;
+    letter-spacing: 0.1em;
+}
+
+.paragrafo{
+    position: relative;
+    top: 2.5em;
+    letter-spacing: 0.1em;
+}
+
+.meu-hr {
+    position: relative;
+    top: 1.2em;
+    display: flex;
+    align-items: center;
+  }
+.meu-hr hr {
+    flex:1;
+    border-color: #ccc;
+}
+
+.col{
+    border: 1px solid #ccc;
+}
+
+.sl{
+    position: relative;
+    background-color: aqua;
+}
+
+.material-symbols-outlined {
+    color: rgba(0, 110, 255, 0.863);
+    position: absolute;
+  font-variation-settings:
+  'FILL' 300,
+  'wght' 300,
+  'GRAD' 110,
+  'opsz' 148
+}
+
+
 @media screen and (max-width: 760px) {
-    .ie {
+    .im {
         left: 0;
     }
 }
