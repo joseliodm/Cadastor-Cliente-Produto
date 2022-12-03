@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+<head>
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
     <meta name="description" content="Formulário de Cadastro">
@@ -18,95 +18,167 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/cepApi.js" type="module" defer></script>
-    <body>
-    
+    <script src="js/cnpjApi.js"></script>
+</head>
+  <body>
+
+    <button id="download" class="btn btn-secondary dropdown-toggle btn">baixar</button>
     <form id="form">
       <div class="container">
         <div class="d-flex justify-content-end">
-          <button type="submit" class="btn btn-secondary dropdown-toggle btn">Enviar</button>
+          <button id="salvar" class="btn btn-secondary dropdown-toggle btn">Enviar</button>
         </div>
         <div class="d-flex justify-content-center">
           <h1>Cadastro Cliente / Produto</h1>
         </div>
         <div class="col">
+
           <div class="alert-primary">
             <h5 class="text-dark">Solicitação</h5>
           </div>
-          <p class="d-flex justify-content-center" id="msgErro" ></p>  
+
           <div class="meu-hr">
             <p style="font-size:20px">Dados do Fornecedor</p><hr>
           </div>
+          
           <div class="form-row">
             <div class="form-group col-md-8">
-              <label for="rs" title="Nome da Razão Social">Razão Social <span class="material-symbols-outlined">
+              <label for="rs" title="Nome da Razão Social">Razão Social*<span class="material-symbols-outlined">
                 info
                 </span></label>
-              <input type="text" class="form-control" id="rs" >
+              <input type="text" class="form-control" id="rs" required>
             </div>
             <div class="form-group col-md-4">
-              <label for="cnpj">CNPJ</label>
-              <input type="text" class="form-control" id="cnpj"  onkeypress="$(this).mask('00.000.000/0000-00')">
+              <label for="cnpj">CNPJ*</label>
+              <input type="text" class="form-control" id="cnpj" required  onkeypress="$(this).mask('00.000.000/0000-00')">
             </div>
             <div class="form-group col-md-8">
-              <label for="nf">Nome Fantasia</label>
-              <input type="text" class="form-control" id="nf" >
+              <label for="nf">Nome Fantasia*</label>
+              <input type="text" class="form-control" id="nf" required>
             </div>
             <div class="form-group col-md-4">
               <label for="ie">Inscrição Estadual</label>
-              <input type="text" class="form-control" id="ie"  onkeypress="$(this).mask('000.000.000.000')">
+              <input type="text" class="form-control" id="ie" title="Campo Opcional"  onkeypress="$(this).mask('000.000.000.000')">
             </div>
             <div class="form-group col-md-5">
-              <label for="cep">CEP</label>
-              <input type="text" class="form-control" id="cep" title="Digite o CEP para carregar o endereço">
+              <label for="cep">CEP*</label>
+              <input type="text" class="form-control" id="cep" required title="Digite o CEP para carregar o endereço">
             </div>
             <div class="form-group col-md-4 im">
               <label for="im">Inscrição Municipal</label>
-              <input type="text" class="form-control " id="im"  onkeypress="$(this).mask('000.000.000.000')">
+              <input type="text" class="form-control " id="im" title="Campo Opcional"   onkeypress="$(this).mask('000.000.000.000')">
             </div>
             <div class="form-group col-md-5">
-              <label for="endereco">Endereço</label>
-              <input type="text" class="form-control " id="endereco" >
+              <label for="endereco">Endereço*</label>
+              <input type="text" class="form-control " id="endereco" required >
             </div>
             <div class="form-group col-md-3">
               <label for="complemento">Complemento</label>
-              <input type="text" class="form-control " id="complemento"  onkeypress="$(this).mask('000.000.000.000')">
+              <input type="text" class="form-control " id="complemento" title="Campo Opcional">
             </div>
             <div class="form-group col-md-4">
               <label for="numero">Número</label>
-              <input type="text" class="form-control " id="numero" >
+              <input type="text" class="form-control " title="Campo Opcional"  id="numero" >
             </div>
             <div class="form-group col-md-5">
-              <label for="bairro">Bairro</label>
-              <input type="text" class="form-control " id="bairro">
+              <label for="bairro">Bairro*</label re>
+              <input type="text" class="form-control " id="bairro" required>
             </div>
             <div class="form-group col-md-3">
-              <label for="estado">Estado</label>
-              <input type="text" class="form-control " id="estado">
+              <label for="estado">Estado*</label>
+              <input type="text" class="form-control " id="estado" required>
             </div>
             <div class="form-group col-md-4">
-              <label for="cidade">Municipio</label>
-              <input type="text" class="form-control " id="cidade" >
+              <label for="cidade">Municipio*</label>
+              <input type="text" class="form-control " id="cidade" required >
             </div>
             <div class="form-group col-md-5">
-              <label for="nomeContato">Nome da pessoa de Contato</label>
-            <input type="text" class="form-control " id="nomeContato">
+              <label for="nomeContato">Nome da pessoa de Contato*</label>
+            <input type="text" class="form-control " id="nomeContato" required>
           </div>
           <div class="form-group col-md-3">
-            <label for="telefone">Telefone</label>
-            <input type="text" class="form-control " id="telefone" placeholder="(11) 9999-99999" onkeypress="$(this).mask('(00) 0000-00000')">
+            <label for="telefone">Telefone*</label>
+            <input type="text" class="form-control " id="telefone" required placeholder="(11) 9999-99999" onkeypress="$(this).mask('(00) 0000-00000')">
           </div>
           <div class="form-group col-md-4">
-            <label for="email">Email</label>
-            <input type="text" class="form-control " id="email" placeholder="exemplo@email.com">
+            <label for="email">Email*</label>
+            <input type="email" class="form-control " id="email" required placeholder="exemplo@email.com">
           </div>
         </div>
       </div>
     </div>
-    </form>
+  </form>
+  <div class="container">
+    <div class="col">
+      <div class="meu-hr">
+        <p style="font-size:20px">Produtos</p><hr>
+      </div>
+      
+      <button type="button" class="btn btn-success btn-produto" data-toggle="modal" data-target="#ModalLongoExemplo">
+        Incluir item
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="TituloModalLongoExemplo">Cadastrar Produtos</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <form id="cadProduto">
+                <div class="form-group row">
+                  <label for="dProduto" class="col-sm-5 col-form-label">Descrição do Produto*</label>
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control" id="dProduto" required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-3">
+                    <label for="uMedida">Unid. Medida*</label>
+                    <select id="uMedida" class="form-control">
+                      <option selected></option>
+                      <option>Kilograma (kg)</option>
+                      <option>Unidade</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="qEstoque">Quantidade*</label>
+                    <input type="text" class="form-control" id="qEstoque" required onkeypress="$(this).mask('000.000.000.000.000,00')">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="vUnitario">Valor Unitário*</label>
+                    <input type="text" class="form-control" id="vUnitario" required onkeypress="$(this).mask('000.000.000.000.000,00')">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="vTotal ">V. Total</label>
+                    <input type="text" class="form-control" id="vTotal" disabled="" onkeypress="$(this).mask('000.000.000.000.000,00')">
+                  </div>
+                </div>
+                <input class="btn btn-secondary" type="submit" value="Cadastrar" id="Cadastrar"><br><br>
+                <input class="btn btn-secondary" type="submit" value="deletar" id="deletar"><br><br>
+                
+            </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+      <span id="conteudo"></span>
+    </div>
+  </div>
 
     <!-- JavaScript -->
     <script src="js/script.js"></script>
-    
+    <script src="js/produtosScript.js"></script>
+    <script src="js/download.js"></script>
   </body>
 </html>

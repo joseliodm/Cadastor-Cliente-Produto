@@ -20,6 +20,13 @@
     letter-spacing: 0.1em;
 }
 
+.btn-produto{
+    position: relative;
+    left: 80%;
+    top: 2%;
+}
+
+
 .paragrafo{
     position: relative;
     top: 2.5em;
@@ -39,7 +46,9 @@
 
 .col{
     border: 1px solid #ccc;
+    width: 100%;
 }
+
 
 .sl{
     position: relative;
@@ -62,3 +71,15 @@
         left: 0;
     }
 }
+
+@media screen and (max-width: 760px) {
+    .btn-produto {
+        position: relative;
+        left: 70%;
+        top: 0;
+    }
+}
+
+
+
+
