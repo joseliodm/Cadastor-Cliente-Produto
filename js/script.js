@@ -23,18 +23,21 @@ formCadastro.addEventListener("submit", (e) => {
 
   };
 
+  localStorage.setItem("dadosFornecedor", JSON.stringify(dadosFornedor));
+  
+  const download = document.getElementById("download");
 
-  salvar.addEventListener("click", () => {
-    localStorage.setItem("object", JSON.stringify(dadosFornedor));
-  });
-
- 
-  Swal.fire({
-    position: "center",
-    icon: "success",
-    title: "Dados salvos com sucesso!",
-    showConfirmButton: false,
-    timer: 1500,
+    download.addEventListener("click", () => {
+    const itens = JSON.parse(localStorage.getItem("produtos"));
+    const dadosFornedor = JSON.parse(localStorage.getItem("dadosFornecedor"));
+    const anexos = JSON.parse(localStorage.getItem("anexos"));
+    const data = JSON.stringify({dadosFornedor, anexos, itens });
+    const blob = new Blob([data], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.download = "dados.json";
+    link.href = url;
+    link.click();
   });
 });
 

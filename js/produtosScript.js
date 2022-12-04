@@ -36,14 +36,14 @@ cadProd.addEventListener("submit", async (e) => {
         total
     }
 
-    if (localStorage.getItem("item") === null) {
+    if (localStorage.getItem("produtos") === null) {
         itens = [];
         itens.push(item);
-        localStorage.setItem("item", JSON.stringify(itens));
+        localStorage.setItem("produtos", JSON.stringify(itens));
     }else {
-        itens = JSON.parse(localStorage.getItem("item"));
+        itens = JSON.parse(localStorage.getItem("produtos"));
         itens.push(item);
-        localStorage.setItem("item", JSON.stringify(itens));
+        localStorage.setItem("produtos", JSON.stringify(itens));
     }
 
     //funcao deletar itens
@@ -51,23 +51,23 @@ cadProd.addEventListener("submit", async (e) => {
         itens = itens.filter((item) => {
             return item.produto !== produto;
         });
-        localStorage.setItem("item", JSON.stringify(itens));
+        localStorage.setItem("produtos", JSON.stringify(itens));
         show();
     }
 
-
-
     
+
+
     $('#ModalLongoExemplo').modal('hide');
-
     
+
     e.preventDefault();
     
     function show() {
-        let itens = JSON.parse(localStorage.getItem("item"));
+        let itens = JSON.parse(localStorage.getItem("produtos"));
         let itensView = document.getElementById("conteudo");
         itensView.innerHTML = "";
-        for (let i = 1; i < itens.length; i++) {
+        for (let i = 0; i < itens.length; i++) {
             let produto = itens[i].produto;
             let unidade = itens[i].unidade;
             let quantidade = itens[i].quantidade;
@@ -92,11 +92,11 @@ cadProd.addEventListener("submit", async (e) => {
               </div>
               <div class="col col-auter">
                 <span>Descrição do Produto:</span>
-              <p class="mb-0 result-auter">${valor}</p>
+              <p class="mb-0 result-auter">R$ ${valor}</p>
               </div>
               <div class="col col-auter">
                 <span>Descrição do Produto:</span>
-              <p class="mb-0 result-auter">${total}</p>
+              <p class="mb-0 result-auter">R$ ${total}</p>
               </div>
             </div>
             <div class="col-2 btn-delete-produtos">

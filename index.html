@@ -21,9 +21,9 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/cepApi.js" type="module" defer></script>
     <script src="js/cnpjApi.js"></script>
-</head>
+  </head>
   <body>
-
+    
     <button id="download" class="btn btn-secondary dropdown-toggle btn">baixar</button>
     <form id="form">
       <div class="container-fluid">
@@ -45,7 +45,7 @@
           
           <div class="form-row">
             <div class="form-group col-md-8">
-              <label for="rs" title="Nome da Razão Social">Razão Social*<span class="material-symbols-outlined">
+              <label for="rs" title="Nome da Razão Social">Razão Social*<span class="material-symbols-outlined info-icon">
                 info
                 </span></label>
               <input type="text" class="form-control" id="rs" required>
@@ -115,9 +115,20 @@
     <div class="meu-hr">
       <p style="font-size:20px">Anexos</p><hr>
     </div>
-    <input type="file" class="form-control-file" id="upload">
-    <button type="button" id="vizualizar"> visualizar</button>
-    <button type="button" id="deletar">deletar</button>
+    <div class="row">
+      <div class="col">
+        <div class="col-3">
+        </div>
+        <div class="col-6">
+          <input type="file" id="fileElem" multiple accept="pdf/*" style="display:none" onchange="handleFiles(this.files)">
+          <a class="btn btn-success" href="#" id="fileSelect">Anexar</a>
+        <div id="fileList">
+        </div>
+        <div>
+        </div>
+      </div>
+      </div>
+    </div>
   </div>
 
   <div class="container-fluid">
@@ -169,8 +180,7 @@
                     <input type="text" class="form-control" id="vTotal" disabled="" onkeypress="$(this).mask('000.000.000.000.000,00')">
                   </div>
                 </div>
-                <input class="btn btn-secondary" type="submit" value="Cadastrar" id="Cadastrar"><br><br>
-                <input class="btn btn-secondary" type="submit" value="deletar" id="deletar"><br><br>
+                <button class="btn btn-secondary" type="submit"  id="cadProduto">Adicionar</button>
             </form>
             </div>
             <div class="modal-footer">
@@ -183,9 +193,9 @@
   </div>
 
 
-  <script src="js/script.js"></script>
+  
   <script src="js/produtosScript.js"></script>
-  <script src="js/download.js"></script>
+  <script src="js/script.js"></script>
   <script src="js/anexo.js"></script>
   </body>
 </html>
