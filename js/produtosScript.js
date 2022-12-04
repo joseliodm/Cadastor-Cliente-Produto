@@ -55,6 +55,8 @@ cadProd.addEventListener("submit", async (e) => {
         show();
     }
 
+
+
     
     $('#ModalLongoExemplo').modal('hide');
 
@@ -65,34 +67,44 @@ cadProd.addEventListener("submit", async (e) => {
         let itens = JSON.parse(localStorage.getItem("item"));
         let itensView = document.getElementById("conteudo");
         itensView.innerHTML = "";
-        for (let i = 0; i < itens.length; i++) {
+        for (let i = 1; i < itens.length; i++) {
             let produto = itens[i].produto;
             let unidade = itens[i].unidade;
             let quantidade = itens[i].quantidade;
             let valor = itens[i].valor;
             let total = itens[i].total;
             itensView.innerHTML += `
-            <div class="row">
-            <div class="col-2">
-            <span>Produto</span>
-            <p>${produto}</p>
+            <div class="container">
+            <p class="text-center-produto">Item: ${i}</p>
+            <div class="row col-produtos">
+            <div class="col-8 desc-1">
+            <span>Descrição do Produto:</span>
+            <p class="mb-0 result">${produto}</p>
             </div>
-            <div class="col-2">
-            <p>${unidade}</p>
+            <div class="container-fluid alinhamento-result">
+              <div class="col col-auter">
+                <span>Descrição do Produto:</span>
+              <p class="mb-0 result-auter">${unidade}</p>
+              </div>
+              <div class="col col-auter">
+                <span>Descrição do Produto:</span>
+              <p class="mb-0 result-auter">${quantidade}</p>
+              </div>
+              <div class="col col-auter">
+                <span>Descrição do Produto:</span>
+              <p class="mb-0 result-auter">${valor}</p>
+              </div>
+              <div class="col col-auter">
+                <span>Descrição do Produto:</span>
+              <p class="mb-0 result-auter">${total}</p>
+              </div>
             </div>
-            <div class="col-2">
-            <p>${quantidade}</p>
-            </div>
-            <div class="col-2">
-            <p>${valor}</p>
-            </div>
-            <div class="col-2">
-            <p>${total}</p>
-            </div>
-            <div class="col-2">
+            <div class="col-2 btn-delete-produtos">
             <button class="btn btn-danger" onclick="deleteItem('${produto}')">Deletar</button>
                 </div>
             </div>
+  
+        </div>
             `
         }
     }

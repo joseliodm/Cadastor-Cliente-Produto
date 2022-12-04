@@ -1,4 +1,5 @@
 
+
 .form-row{
     padding-top: 2em;
     border-left: 1px solid #ccc;
@@ -26,6 +27,12 @@
     top: 2%;
 }
 
+.btn-delete-produtos{
+    position: relative;
+    right: 12%;
+    bottom: 5em;
+}
+
 
 .paragrafo{
     position: relative;
@@ -39,7 +46,7 @@
     display: flex;
     align-items: center;
   }
-.meu-hr hr {
+  .meu-hr hr {
     flex:1;
     border-color: #ccc;
 }
@@ -47,6 +54,13 @@
 .col{
     border: 1px solid #ccc;
     width: 100%;
+}
+
+.col-two{
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    width: 100%;
+    height: 250px;
 }
 
 
@@ -66,6 +80,58 @@
 }
 
 
+.desc-1{
+    display: flex;
+}
+
+.result{
+    position: relative;
+    left: 2%;
+    bottom: 5px;
+    padding-top: 5px;
+    padding-right: 20em;
+    border-radius: 5px;
+    border: 1px solid #ccc;;   
+}
+
+.text-center-produto {
+    font-family: cursive;
+    position: relative;
+    left: 10%;
+    top: 32px;
+}
+
+.result-auter{
+    width: 20%;
+    position: relative;
+    left: 2%;
+    bottom: -5px;
+    padding-top: 5px;
+    padding-right: 9em;
+    border-radius: 5px;
+    border: 1px solid #ccc;;   
+}
+
+.alinhamento-result{
+    display: flex;
+}
+
+.col-produtos{
+    position: relative;
+    left: 10%;
+    top: 10px;
+    display: block;
+    border: 1px solid #afafaf;
+    padding: 10px;
+    width: 90%;
+}
+
+.col-auter{
+    border: none;
+    position: relative;
+    top: 20px;
+}
+
 @media screen and (max-width: 760px) {
     .im {
         left: 0;
@@ -79,7 +145,4 @@
         top: 0;
     }
 }
-
-
-
 
