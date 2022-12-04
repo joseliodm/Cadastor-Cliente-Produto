@@ -100,7 +100,7 @@ cadProd.addEventListener("submit", async (e) => {
               </div>
             </div>
             <div class="col-2 btn-delete-produtos">
-            <button class="btn btn-danger" onclick="deleteItem('${produto}')">Deletar</button>
+            <button class="material-symbols-outlined delete-icon-produtos" onclick="deleteItem('${produto}')">Delete</button>
                 </div>
             </div>
   

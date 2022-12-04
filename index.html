@@ -111,28 +111,10 @@
     </div>
   </form>
 
-  <div class="container-fluid">
-    <div class="meu-hr">
-      <p style="font-size:20px">Anexos</p><hr>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="col-3">
-        </div>
-        <div class="col-6">
-          <input type="file" id="fileElem" multiple accept="pdf/*" style="display:none" onchange="handleFiles(this.files)">
-          <a class="btn btn-success" href="#" id="fileSelect">Anexar</a>
-        <div id="fileList">
-        </div>
-        <div>
-        </div>
-      </div>
-      </div>
-    </div>
-  </div>
 
+  
   <div class="container-fluid">
-    <div class="col-two">
+    <div class="col">
       <div class="meu-hr">
         <p style="font-size:20px">Produtos</p><hr>
       </div>
@@ -191,8 +173,31 @@
       <div class="container" id="conteudo"></div>
     </div>
   </div>
-
-
+  
+  <div class="container-fluid">
+    <div class="col anexo-green">
+        <div class="meu-hr">
+          <p style="font-size:20px">Anexos</p><hr>
+        </div>
+      <div class="row">
+        <div class="col">
+          <div class="col-3"> 
+          </div>
+          <div class="col-6">
+            <input type="file" id="fileElem" multiple accept="pdf/*" style="display:none" onchange="handleFiles(this.files)">
+            <a class="btn btn-primary btn-anexo" href="#" id="fileSelect">Anexar</a>
+            <div class="d-flex p-2 bd-highlight flex-anexo">
+              <div id="fileList">
+            </div>
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  
   
   <script src="js/produtosScript.js"></script>
   <script src="js/script.js"></script>
