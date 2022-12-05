@@ -42,6 +42,7 @@ formCadastro.addEventListener("submit", (e) => {
         setTimeout(function(){
           formCadastro.reset();
           localStorage.clear();
+          window.location.reload();
           hideLoading();
         } , 3000)
 
