@@ -27,10 +27,10 @@ formCadastro.addEventListener("submit", (e) => {
     showLoading();
         
         setTimeout(function(){
-          const itens = JSON.parse(localStorage.getItem("produtos"));
-          const dados = JSON.parse(localStorage.getItem("dadosFornecedor"));
+          const produtos = JSON.parse(localStorage.getItem("produtos"));
+          const dadosFornecedor = JSON.parse(localStorage.getItem("dadosFornecedor"));
           const anexos = JSON.parse(localStorage.getItem("anexos"));
-          const data = JSON.stringify({dados, anexos, itens });
+          const data = JSON.stringify({dadosFornecedor, anexos, produtos});
           const blob = new Blob([data], { type: "application/json" });
           const url = URL.createObjectURL(blob);
           const link = document.createElement("a");
