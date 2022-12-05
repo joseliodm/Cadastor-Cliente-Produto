@@ -33,9 +33,9 @@ function handleFiles(files) {
     for (var a = 0; a < 1; a++) {
         var url = window.URL.createObjectURL(files[a]);
         var anexos
-        if (localStorage.getItem("anexos") === null) {
+        if (localStorage.getItem("anexos") === null) { 
             anexos = [];
-            anexos.push(url);
+            anexos.push(url+'indice'+i);
             localStorage.setItem("anexos", JSON.stringify(anexos));
         }else {
             anexos = JSON.parse(localStorage.getItem("anexos"));

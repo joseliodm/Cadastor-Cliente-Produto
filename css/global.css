@@ -1,3 +1,7 @@
+#width-form{
+ width: 90%;
+}
+
 #label-file {
     background-color: #3498db;
     border-radius: 5px;
@@ -5,13 +9,6 @@
     cursor: pointer;
     margin: 10px;
     padding: 6px 20px
-}
-
-.form-row{
-    padding-top: 2em;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
 }
 
 .upload-col{
@@ -55,7 +52,7 @@
 
 .btn-anexo{
     position: relative;
-    top: 2%;
+    bottom: 2.5px;
 }
 
 .flex-anexo{
@@ -204,14 +201,38 @@
     width: 90%;
 }
 
+.text{
+    position: relative;
+    left: 60%;
+    top:5px;
+}
+
 .col-auter{
     border: none;
     position: relative;
     top: 20px;
 }
 
+.alert-primary {
+    display: flex;
+    border: 1px solid #000000;
+}
+
+
+
 .anexo-green{
-    background-color: #78ca7841;
+    background-color: #10281326;
+}
+
+.loading {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.loading label {
+    font-size: 24px;
 }
 
 
@@ -229,6 +250,14 @@ li{
     .btn-produto {
         position: relative;
         left: 70%;
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .btn-salvar {
+        position: relative;
+        right: 0;
         top: 0;
     }
 }

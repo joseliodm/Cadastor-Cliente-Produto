@@ -1,4 +1,3 @@
-
 const cadProd = document.getElementById("cadProduto");
 const dProduto = document.getElementById("dProduto");
 const uMedida = document.getElementById("uMedida");
@@ -19,7 +18,6 @@ let itens
 let deleteItem
 
 cadProd.addEventListener("submit", async (e) => {
-    
     
     
     const produto = dProduto.value;
@@ -54,13 +52,11 @@ cadProd.addEventListener("submit", async (e) => {
         localStorage.setItem("produtos", JSON.stringify(itens));
         show();
     }
-
     
-
-
+    
     $('#ModalLongoExemplo').modal('hide');
     
-
+    
     e.preventDefault();
     
     function show() {
@@ -100,7 +96,7 @@ cadProd.addEventListener("submit", async (e) => {
               </div>
             </div>
             <div class="col-2 btn-delete-produtos">
-            <button class="material-symbols-outlined delete-icon-produtos" onclick="deleteItem('${produto}')">Delete</button>
+            <button class="material-symbols-outlined delete-icon-produtos"  onclick="deleteItem('${produto}')">Delete</button>
                 </div>
             </div>
   
@@ -111,7 +107,6 @@ cadProd.addEventListener("submit", async (e) => {
 
     show();
     cadProd.reset();
-
 });
 
 
