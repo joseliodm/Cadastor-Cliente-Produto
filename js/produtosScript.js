@@ -20,18 +20,18 @@ let deleteItem
 cadProd.addEventListener("submit", async (e) => {
     
     
-    const produto = dProduto.value;
-    const unidade = uMedida.value;
-    const quantidade = qEstoque.value;
-    const valor = vUnitario.value;
-    const total = vTotal.value;
+    const descricaoProduto = dProduto.value;
+    const unidadeMedida = uMedida.value;
+    const qtdeEstoque = qEstoque.value;
+    const valorUnitario = vUnitario.value;
+    const valorTotal = vTotal.value;
     
     const item = {
-        produto,
-        unidade,
-        quantidade,
-        valor,
-        total
+        descricaoProduto,
+        unidadeMedida,
+        qtdeEstoque,
+        valorUnitario,
+        valorTotal
     }
 
     if (localStorage.getItem("produtos") === null) {
@@ -64,11 +64,11 @@ cadProd.addEventListener("submit", async (e) => {
         let itensView = document.getElementById("conteudo");
         itensView.innerHTML = "";
         for (let i = 0; i < itens.length; i++) {
-            let produto = itens[i].produto;
-            let unidade = itens[i].unidade;
-            let quantidade = itens[i].quantidade;
-            let valor = itens[i].valor;
-            let total = itens[i].total;
+            let produto = itens[i].descricaoProduto;
+            let unidade = itens[i].unidadeMedida;
+            let quantidade = itens[i].qtdeEstoque;
+            let valor = itens[i].valorUnitario;
+            let total = itens[i].valorTotal;
             itensView.innerHTML += `
             <div class="container">
             <p class="text-center-produto">Item: ${i}</p>
