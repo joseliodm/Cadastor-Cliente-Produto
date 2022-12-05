@@ -5,19 +5,19 @@ formCadastro.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const dadosFornedor = {
-    rs: document.getElementById("rs").value,
+    razaoSocial: document.getElementById("rs").value,
+    nomeFantasia: document.getElementById("nf").value,
     cnpj: document.getElementById("cnpj").value,
-    nf: document.getElementById("nf").value,
-    ie: document.getElementById("ie").value,
-    im: document.getElementById("im").value,
+    inscricaoEstadual: document.getElementById("ie").value,
+    inscricaoMunicipal: document.getElementById("im").value,
+    nomeContato: document.getElementById("nomeContato").value,
+    telefoneContato: document.getElementById("telefone").value,
+    emailContato: document.getElementById("email").value,
     cep: document.getElementById("cep").value,
     endereco: document.getElementById("endereco").value,
     bairro: document.getElementById("bairro").value,
     cidade: document.getElementById("cidade").value,
     estado: document.getElementById("estado").value,
-    nomeContato: document.getElementById("nomeContato").value,
-    email: document.getElementById("email").value,
-    telefone: document.getElementById("telefone").value,
 
   };
   

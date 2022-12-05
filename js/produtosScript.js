@@ -19,20 +19,21 @@ let deleteItem
 
 cadProd.addEventListener("submit", async (e) => {
     
-    
     const descricaoProduto = dProduto.value;
     const unidadeMedida = uMedida.value;
     const qtdeEstoque = qEstoque.value;
     const valorUnitario = vUnitario.value;
     const valorTotal = vTotal.value;
+     
     
     const item = {
-        descricaoProduto,
-        unidadeMedida,
-        qtdeEstoque,
-        valorUnitario,
-        valorTotal
-    }
+            descricaoProduto,
+            unidadeMedida,
+            qtdeEstoque,
+            valorUnitario,
+            valorTotal
+        }
+    
 
     if (localStorage.getItem("produtos") === null) {
         itens = [];
@@ -108,6 +109,3 @@ cadProd.addEventListener("submit", async (e) => {
     show();
     cadProd.reset();
 });
-
-
-           
