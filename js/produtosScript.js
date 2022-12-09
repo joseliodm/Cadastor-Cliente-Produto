@@ -80,19 +80,19 @@ cadProd.addEventListener("submit", async (e) => {
             </div>
             <div class="container-fluid alinhamento-result">
               <div class="col col-auter">
-                <span>Descrição do Produto:</span>
+                <span>Unid. Medida:</span>
               <p class="mb-0 result-auter">${unidade}</p>
               </div>
               <div class="col col-auter">
-                <span>Descrição do Produto:</span>
+                <span>Qtde em Estoque:</span>
               <p class="mb-0 result-auter">${quantidade}</p>
               </div>
               <div class="col col-auter">
-                <span>Descrição do Produto:</span>
+                <span>Valor Unitário:</span>
               <p class="mb-0 result-auter">R$ ${valor}</p>
               </div>
               <div class="col col-auter">
-                <span>Descrição do Produto:</span>
+                <span>Valor Total:</span>
               <p class="mb-0 result-auter">R$ ${total}</p>
               </div>
             </div>
@@ -105,6 +105,8 @@ cadProd.addEventListener("submit", async (e) => {
             `
         }
     }
+
+
 
     show();
     cadProd.reset();
