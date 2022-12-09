@@ -46,14 +46,13 @@ cadProd.addEventListener("submit", async (e) => {
     }
 
     //funcao deletar itens
-    deleteItem = (produto) => {
-        itens = itens.filter((item) => {
-            return item.produto !== produto;
-        });
+    deleteItem = (index) => {   
+        itens = JSON.parse(localStorage.getItem("produtos"));
+        itens.splice(index, 1);
         localStorage.setItem("produtos", JSON.stringify(itens));
         show();
     }
-    
+
     
     $('#ModalLongoExemplo').modal('hide');
     
